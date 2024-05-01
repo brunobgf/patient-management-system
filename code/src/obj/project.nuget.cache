@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DftByYBSX2YjuMcWwXBP1DAe6csbYtuPZ+4I9badzq2I6XTJtHuWDoi9xWZ+b55Xi7rRtzaTqvkaLsJR3q4uSA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabri\\source\\repos\\tpPipeLine\\code\\src\\apiPaciente.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
+  ],
+  "logs": []
+}
