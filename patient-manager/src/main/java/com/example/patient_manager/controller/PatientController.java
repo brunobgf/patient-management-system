@@ -32,7 +32,7 @@ public class PatientController {
     }
 
     @PostMapping
-    public Patient createPatient(@RequestBody Patient patient) {
+    public Patient newPatient(@RequestBody Patient patient) {
         return repository.save(patient);
     }
 

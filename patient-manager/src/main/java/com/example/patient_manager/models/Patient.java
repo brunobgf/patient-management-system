@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -20,28 +22,30 @@ public class Patient {
     private double height;
     private double weight;
     private String cpf;
+    @Transient
+    private Double bmi;
 
     public int calculateAge() {
         return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 
-    public double calculateIMC() {
+    public double getBMI() {
         return this.weight / (this.height * this.height);
     }
 
-    public String getIMCSituation() {
-        double imc = this.calculateIMC();
-        if (imc < 17)
+    public String getBMISituation() {
+        double bmi = this.getBMI();
+        if (bmi < 17)
             return "Muito abaixo do peso";
-        if (imc < 18.5)
+        if (bmi < 18.5)
             return "Abaixo do peso";
-        if (imc < 25)
+        if (bmi < 25)
             return "Peso normal";
-        if (imc < 30)
+        if (bmi < 30)
             return "Acima do peso";
-        if (imc < 35)
+        if (bmi < 35)
             return "Obesidade I";
-        if (imc < 40)
+        if (bmi < 40)
             return "Obesidade II (severa)";
         return "Obesidade III (mórbida)";
     }
@@ -56,5 +60,27 @@ public class Patient {
 
     public String getMaskedCpf() {
         return "***." + this.cpf.substring(3, 6) + ".***-**";
+
+    }
+
+    public boolean validateCpf() {
+        if (this.cpf == null || this.cpf.length() != 11) {
+            return false;
+        }
+        try {
+            int[] cpfArray = this.cpf.chars().map(Character::getNumericValue).toArray();
+            int v1 = 0, v2 = 0;
+            for (int i = 0; i < 9; i++) {
+                v1 += cpfArray[i] * (10 - i);
+                v2 += cpfArray[i] * (11 - i);
+            }
+            v1 = (v1 % 11) < 2 ? 0 : 11 - (v1 % 11);
+            v2 += v1 * 9;
+            v2 = (v2 % 11) < 2 ? 0 : 11 - (v2 % 11);
+
+            return v1 == cpfArray[9] && v2 == cpfArray[10];
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
