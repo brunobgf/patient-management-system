@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Quality Check (repository)
 
 on: [push, pull_request]
 
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Quality Check
+    - name: Check Code Quality
       uses: actions/checkout@v2
 
     - name: Set up JDK 17
