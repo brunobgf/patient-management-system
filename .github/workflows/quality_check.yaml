@@ -3,7 +3,7 @@ name: CI Pipeline
 on: [push, pull_request]
 
 jobs:
-  unit-tests:
+  quality-check:
     runs-on: ubuntu-latest
 
     steps:
