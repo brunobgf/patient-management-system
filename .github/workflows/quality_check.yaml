@@ -24,3 +24,12 @@ jobs:
 
     - name: Run integration tests
       run: mvn -f patient-manager/pom.xml verify -Pintegration-tests
+
+    - name: Build Docker image
+      run: docker build -t brunobgf/patient-management-system:${{ github.sha }} -f patient-manager/Dockerfile patient-manager
+
+    - name: Login to DockerHub
+      run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+    - name: Push Docker image
+      run: docker push brunobgf/patient-management-system:${{ github.sha }}
