@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-PatientManagerApplication<patient-manager>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.patient_manager.PatientManagerApplication",
+      "projectName": "patient-manager",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
