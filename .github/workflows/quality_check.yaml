@@ -21,3 +21,6 @@ jobs:
 
     - name: Run unit tests
       run: mvn -f patient-manager/pom.xml test -Punit-tests
+
+    - name: Run integration tests
+      run: mvn -f patient-manager/pom.xml verify -Pintegration-tests
