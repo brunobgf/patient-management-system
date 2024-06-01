@@ -26,7 +26,7 @@ jobs:
       run: mvn -f patient-manager/pom.xml verify -Pintegration-tests
 
     - name: Build Docker image
-      run: docker build . -t brunobgf/patient-manager:${{ github.sha }}
+      run: docker build -f docker/Dockerfile . -t brunobgf/patient-management-system${{ github.sha }}
 
     - name: Login to DockerHub
       run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
