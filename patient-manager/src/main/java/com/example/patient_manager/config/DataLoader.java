@@ -28,16 +28,7 @@ public class DataLoader {
             patient1.setWeight(75.0);
             patient1.setCpf("123.456.789-10");
 
-            Patient patient2 = new Patient();
-            patient2.setName("Jane Smith");
-            patient2.setGender("Female");
-            patient2.setBirthDate(LocalDate.of(1990, 9, 20));
-            patient2.setHeight(1.65);
-            patient2.setWeight(60.0);
-            patient2.setCpf("987.654.321-00");
-
             patientRepository.save(patient1);
-            patientRepository.save(patient2);
         };
     }
 }

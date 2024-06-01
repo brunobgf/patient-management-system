@@ -1,6 +1,8 @@
 package com.example.patient_manager.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,6 +14,8 @@ import java.time.Period;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,11 +55,13 @@ public class Patient {
     }
 
     public double getIdealWeight() {
+        double idealWeight;
         if (this.gender.equalsIgnoreCase("male")) {
-            return (72.7 * this.height) - 58;
+            idealWeight = (72.7 * this.height) - 58;
         } else {
-            return (62.1 * this.height) - 44.7;
+            idealWeight = (62.1 * this.height) - 44.7;
         }
+        return Math.round(idealWeight * 1000.0) / 1000.0;
     }
 
     public String getMaskedCpf() {
@@ -83,4 +89,5 @@ public class Patient {
             return false;
         }
     }
+
 }
