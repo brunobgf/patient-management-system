@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    container_name: clinic_db
+    environment:
+      POSTGRES_DB: clinicdb
+      POSTGRES_USER: clinicdbuser
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: ./patient-manager
+      dockerfile: Dockerfile
+    container_name: clinic_api
+    environment:
+      SPRING_APPLICATION_NAME: patient-manager
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/clinicdb
+      SPRING_DATASOURCE_USERNAME: clinicdbuser
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+    driver: local
