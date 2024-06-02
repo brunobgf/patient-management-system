@@ -13,6 +13,7 @@ Este projeto é uma API RESTful para gerenciamento de pacientes em uma clínica 
 - [Arquitetura](#arquitetura)
 - [Instruções de Uso](#instruções-de-uso)
 - [Tecnologias Usadas](#tecnologias-usadas)
+- [Tecnologias Usadas](#tecnologias-usadas)
 - [Contribuição](#contribuição)
 - [Autor](#autor)
 - [Licença](#licença)
@@ -27,7 +28,6 @@ A aplicação utiliza Spring Boot com um banco de dados relacional gerenciado pe
 
    ```bash
    git clone https://github.com/brunobgf/patient-management-system.git
-   cd patient-manager
    ```
 
 2. **Instruções de utilização:**
@@ -38,9 +38,11 @@ A aplicação utiliza Spring Boot com um banco de dados relacional gerenciado pe
 
 4. **Testando**
 
-- Para executar os testes basta utilizar o comando
+- Os testes unitários verificam funcionalidades específicas do modelo Patient. Incluem testes para o cálculo do peso ideal para homens e mulheres `testGetIdealWeightMale()` e `testGetIdealWeightFemale()`, o cálculo do IMC `testCalculateIMC()`, a idade baseada na data de nascimento `testCalculateAge()`, a validação de CPF `testValidateCpf()`, e a formatação do CPF com máscara (testGetMaskedCpf()). Esses testes garantem que os métodos do modelo funcionem corretamente isoladamente.
+- Já os testes de integração verificam a interação entre a API e o repositório de dados. Testam os endpoints da API de pacientes: obter todos os pacientes `testGetAllPatients()`, criar um novo paciente `testCreatePatient()`, obter um paciente por ID `testGetPatientById()`, atualizar um paciente existente `testUpdatePatient()`, e deletar um paciente `testDeletePatient()`. Esses testes garantem que os diferentes componentes da aplicação funcionem corretamente em conjunto.
+- Para executar os testes basta utilizar o comando:
 
-`mvn verify`
+* `mvn verify`
 
 5. **Deploy**
 
