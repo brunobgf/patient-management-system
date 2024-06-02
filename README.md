@@ -32,21 +32,21 @@ A aplicação utiliza Spring Boot com um banco de dados relacional gerenciado pe
 
 2. **Instruções de utilização:**
 
-Para executar o sistema localmente, basta possuir instalado o [Docker](https://docs.docker.com/engine/install/ubuntu/).
+- Para executar o sistema localmente, basta possuir instalado o [Docker](https://docs.docker.com/engine/install/ubuntu/).
 
-Uma vez que tenha instalado o Docker corretamente, basta acessar a raiz da pasta `patient-manager` e realizar o seguinte comando no terminal: `docker compose up`.
+- Uma vez que tenha instalado o Docker corretamente, basta acessar a raiz da pasta `patient-manager` e realizar o seguinte comando no terminal: `docker compose up`.
 
 4. **Testando**
 
-Para executar os testes basta utilizar o comando
+- Para executar os testes basta utilizar o comando
 
 `mvn verify`
 
 5. **Deploy**
 
-Ao realizar o deploy, deve-se atualizar o link do servidor nos seguintes lugares (enquanto não houver dns fixo):
+- Ao realizar o deploy, deve-se atualizar o link do servidor nos seguintes lugares (enquanto não houver dns fixo):
 
-- `docker-compose.yaml`
+* `docker-compose.yaml`
 
 # Tecnologias Usadas
 
