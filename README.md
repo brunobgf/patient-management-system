@@ -14,7 +14,7 @@ Este projeto é uma API RESTful para gerenciamento de pacientes em uma clínica 
 - [Instruções de Uso](#instruções-de-uso)
 - [Tecnologias Usadas](#tecnologias-usadas)
 - [Contribuição](#contribuição)
-- [Autor](#autores)
+- [Autor](#autor)
 - [Licença](#licença)
 
 # Arquitetura
