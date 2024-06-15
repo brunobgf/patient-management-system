@@ -49,6 +49,7 @@ A aplicação utiliza Spring Boot com um banco de dados relacional gerenciado pe
 - Ao realizar o deploy, deve-se atualizar o link do servidor nos seguintes lugares (enquanto não houver dns fixo):
 
 * `docker-compose.yaml`
+* [Projeto no DockerHub](https://hub.docker.com/r/brunobgf/patient-management-system)
 
 # Tecnologias Usadas
 
