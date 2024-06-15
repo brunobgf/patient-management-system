@@ -4,7 +4,7 @@
 
 # Sobre o Projeto
 
-Este projeto é uma API RESTful para gerenciamento de pacientes em uma clínica médica. A API permite realizar operações CRUD (Create, Read, Update, Delete) para gerenciar os dados dos pacientes. Além disso, a API oferece funcionalidades para calcular o IMC, peso ideal, idade, e outras informações relevantes dos pacientes.
+Este projeto é uma API RESTful para gerenciamento de pacientes em uma clínica médica. A API oferece funcionalidades para calcular o IMC, peso ideal e outras informações relevantes dos pacientes.
 
 # Índice/Sumário
 
