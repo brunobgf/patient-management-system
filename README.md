@@ -1,6 +1,6 @@
 # Patient Management System
 
-![Capa do Projeto](https://picsum.photos/850/300)
+![Capa do Projeto](https://picsum.photos/850/280)
 
 # Sobre o Projeto
 
